@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    /* padding: 0 100px; */
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+h1 {
+    margin: 0;
+
+}
+h1::before {
+    content: "Радуга ";
+    color: crimson;
+}
+header {
+    height: 100px;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner {
+    height: 80vh;
+    background: url(images/bg.jpg) no-repeat center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+.banner h1 {
+    position: relative;
+    z-index: 2;
+}
+.banner::before {
+    content: "";
+    background-color: #0006;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.info {
+    background-color: darkcyan;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+.info__card {
+    border: 1px solid;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+}
+.info__card i {
+    font-size: 4em;
+}
+.container {
+    padding-left: calc(50% - 500px);
+    padding-right: calc(50% - 500px);
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+    .container {
+        padding: 50px;
+    }
+    header {
+        height: auto;
+    }
+    .info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 599px) {
+    .container {
+        padding: 10px;
+    }
+    header {
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .banner {
+        height: 300px;
+    }
+    .info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+}
